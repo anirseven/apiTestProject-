@@ -1,36 +1,39 @@
 # api test project
 
-This is a sample test project to test the API for Weather, created using BDD Serenity and Rest Assured
+This is a sample test project to test the API for Weather App (https://weatherstack.com/), created using BDD Serenity and Rest Assured
 Feature Files
+
 This sample project consist of below features
 
-Get Weather Details by specifying the City and Key : Here once the user passes correct key for authentication and City name details should be received in the response and same is validated for status code and weather condition like Sunny , Clear , etc.
-Proper Message for incorrect key : This is a negative test case which validates that if the key that is passed is not proper then specific error message is received from the api call.
+1. Get Weather Details by specifying the City and Key : Here once the user passes correct key for authentication and City name details should be received in the response and same is validated for status code and weather condition like Sunny , Clear , etc.
+
+2. Proper Message for incorrect key : This is a negative test case which validates that if the key that is passed is not proper then specific error message is received from the api call.
 
 ## The project directory structure
 
+```
 -src
-
--main
--test
-
+ -main
+  -test
 -java
--resources
-
--features
-
--weatherDetails.feature
-
+ -resources
+  -features
+   -weatherDetails.feature
+```
 
 ### The sample scenario
+``` 
 Feature: Get Weather Details
+
 @WeatherSearch
+
 Scenario Outline: Validate the weather details for the rqeuired cities
+
 Given user searches weather details of "<City>" with <key>
 When the weather details are available
 Then verify details are for <City>
 Then verify <Field> are available
-	
+``` 
 ### Step Definition
 	
 The Step Definition are at a buisness level and are used only for calling the supporting function with asserstion
